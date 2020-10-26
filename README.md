@@ -118,10 +118,10 @@ The code will be released soon.
 </html>
 
 <p align="center">
-    <img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/>
-    <img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-APH.png"/>
-    <img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-sAP10.png"/>
-    <img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-APH.png"/>
+    <img width="220" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/>
+    <img width="220" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-APH.png"/>
+    <img width="220" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-sAP10.png"/>
+    <img width="220" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-APH.png"/>
     <br/>
     PR curves of sAP<sup>10</sup> and AP<sup>H</sup> on the Wireframe dataset (the left two plots) and YorkUrban dataset (the right two plots).
 </p> 
