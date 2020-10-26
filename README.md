@@ -1,8 +1,10 @@
 [<img height="23" src="https://github.com/lh9171338/Outline/blob/master/icon.jpg"/>](https://github.com/lh9171338/Outline) Unified Line Segment Detection
 ===
 
+## Introduction
+
 ## Network Architecture
-<img width="600" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/>
+<img width="700" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/>
 
 ## Quantitative Results
 ### Pinhole Image Dataset
@@ -113,7 +115,7 @@
 </table>
 </html>
 
-PR curves of sAP$^{10}$ and AP$^H$ on the Wireframe dataset (the left two plots) and YorkUrban dataset (the right two plots).
+PR curves of sAP`$^{10}$` and AP`$^H$` on the Wireframe dataset (the left two plots) and YorkUrban dataset (the right two plots).
 <img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/><img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-APH.png"/><img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-sAP10.png"/><img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-APH.png"/>
 
 ## Qualitative Results
