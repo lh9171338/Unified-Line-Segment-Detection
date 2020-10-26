@@ -1,7 +1,9 @@
 [<img height="23" src="https://github.com/lh9171338/Outline/blob/master/icon.jpg"/>](https://github.com/lh9171338/Outline) Unified Line Segment Detection
 ===
+The code will be released soon.
 
 ## Introduction
+[ULSD]() is a unified line segment detection method for arbitrarily distorted images from a pinhole, fisheye, or spherical camera. With a novel line segment representation based on the Bezier curve, our method can detect arbitrarily distorted line segments. Experimental results on the dataset of pinhole images, fisheye images, and spherical images, demonstrate that it achieves state-of-the-art (SOTA) performance and the fastest speed among the deep learning-based methods.
 
 ## Network Architecture
 <p align="center"><img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/></p>
