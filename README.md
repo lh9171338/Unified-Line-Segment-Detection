@@ -323,4 +323,8 @@ The code will be released soon.
 
 
 ## Qualitative Results 
-<p align="center"><img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/></p> 
+<p align="center">
+    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/>
+    <br/>
+    Rows: (a)-(b) pinhole case, (c)-(d) fisheye case, (e)-(g) spherical case.
+</p> 
