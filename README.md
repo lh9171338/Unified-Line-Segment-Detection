@@ -228,6 +228,10 @@ PR curves of sAP<sup>10</sup> and AP<sup>H</sup> on the Wireframe dataset (the l
 </table>
 </html>
 
+PR curves of sAP<sup>10</sup> on the F-Wireframe dataset (the left plot) and F-YorkUrban dataset (the right plot).
+
+<img width="400" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/><img width="400" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/>
+
 ### Spherical Image Dataset
 
 <html>
@@ -300,6 +304,10 @@ PR curves of sAP<sup>10</sup> and AP<sup>H</sup> on the Wireframe dataset (the l
     </tr>
 </table>
 </html>
+
+PR curves of sAP<sup>10</sup> on the SUN360 dataset.
+
+<img width="400" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/sun360-sAP10.png"/>
 
 ## Qualitative Results
 <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/>
