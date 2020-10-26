@@ -113,7 +113,7 @@
 </table>
 </html>
 
-<img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/><img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/>
+<img width="200" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/><img width="200" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-APH.png"/><img width="200" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-sAP10.png"/><img width="200" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-APH.png"/>
 
 ## Qualitative Results
 <img width="700" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/>
