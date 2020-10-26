@@ -4,8 +4,8 @@
 ## Introduction
 
 ## Network Architecture
-<img width="700" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/>
-
+<p align="center"><img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/></p>
+    
 ## Quantitative Results
 ### Pinhole Image Datasets
 <html>
@@ -228,9 +228,12 @@ PR curves of sAP<sup>10</sup> and AP<sup>H</sup> on the Wireframe dataset (the l
 </table>
 </html>
 
-PR curves of sAP<sup>10</sup> on the F-Wireframe dataset (the left plot) and F-YorkUrban dataset (the right plot).
-
-<img width="400" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/><img width="400" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/>
+<p align="center">
+    <img width="450" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/>
+    <img width="450" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/>
+    <br/>
+    PR curves of sAP<sup>10</sup> on the F-Wireframe dataset (the left plot) and F-YorkUrban dataset (the right plot).
+</p> 
 
 ### Spherical Image Dataset
 
@@ -305,9 +308,12 @@ PR curves of sAP<sup>10</sup> on the F-Wireframe dataset (the left plot) and F-Y
 </table>
 </html>
 
-PR curves of sAP<sup>10</sup> on the SUN360 dataset.
+<p align="center">
+    <img width="450" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/sun360-sAP10.png"/>
+    <br/>
+    PR curves of sAP<sup>10</sup> on the SUN360 dataset.
+</p> 
 
-<img width="400" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/sun360-sAP10.png"/>
 
-## Qualitative Results
-<img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/>
+## Qualitative Results 
+<p align="center"><img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/></p> 
