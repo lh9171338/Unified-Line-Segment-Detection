@@ -113,11 +113,7 @@
 </table>
 </html>
 
-
-
-This repository is the spherical Hough transform algorithm implemented in Windows, and you can also access the [Linux version](https://github.com/lh9171338/Spherical-Hough-Transform/tree/Linux).
-
-<img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/><img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/><img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/sun360-sAP10.png"/>
+<img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/><img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/>
 
 ## Qualitative Results
 <img width="700" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/>
