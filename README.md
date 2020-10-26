@@ -5,13 +5,13 @@
 <img width="600" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/>
 
 ## Quantitative Results
-### Wireframe Dataset
+### Pinhole Image Dataset
 <html>
 <table align="center">
     <tr>
-        <td rowspan="2" align="center">Method</td>
-        <td colspan="5" align="center">Wireframe Dataset</td>
-        <td colspan="5" align="center">YorkUrban Dataset</td>
+        <td rowspan="2" align="center">Method</td> 
+        <td colspan="5" align="center"><a href="https://github.com/huangkuns/wireframe">Wireframe Dataset</a></td>
+        <td colspan="5" align="center"><a href="http://www.elderlab.yorku.ca/resources/york-urban-line-segment-database-information/">YorkUrban Dataset</a></td>
         <td rowspan="2" align="center">FPS</td>     
     </tr>
     <tr>
