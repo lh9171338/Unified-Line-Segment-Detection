@@ -113,7 +113,8 @@
 </table>
 </html>
 
-<img width="200" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/><img width="200" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-APH.png"/><img width="200" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-sAP10.png"/><img width="200" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-APH.png"/>
+PR curves of sAP$^{10}$ and AP$^H$ on the Wireframe dataset (the left two plots) and YorkUrban dataset (the right two plots).
+<img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/><img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-APH.png"/><img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-sAP10.png"/><img width="230" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-APH.png"/>
 
 ## Qualitative Results
 <img width="700" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/>
