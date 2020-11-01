@@ -6,7 +6,7 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 [ULSD]() is a unified line segment detection method for both distorted and undistorted images from pinhole, fisheye or spherical cameras. With a novel line segment representation based on the Bezier curve, our method can detect arbitrarily distorted line segments. Experimental results on the pinhole, fisheye, and spherical image datasets validate the superiority of the proposed ULSD to the SOTA methods both in accuracy and efficiency (40.6fps for pinhole images).
 
 ## Network Architecture
-<p align="center"><img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/></p>
+<p align="center"><img width="600" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/></p>
     
 ## Quantitative Results
 ### Pinhole Image Datasets
@@ -118,10 +118,10 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 </html>
 
 <p align="center">
-    <img width="220" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/>
-    <img width="220" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-APH.png"/>
-    <img width="220" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-sAP10.png"/>
-    <img width="220" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-APH.png"/>
+    <img width="210" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-sAP10.png"/>
+    <img width="210" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/wireframe-APH.png"/>
+    <img width="210" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-sAP10.png"/>
+    <img width="210" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/york-APH.png"/>
     <br/>
     PR curves of sAP<sup>10</sup> and AP<sup>H</sup> on the Wireframe dataset (the left two plots) and YorkUrban dataset (the right two plots).
 </p> 
@@ -250,8 +250,8 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 </html>
 
 <p align="center">
-    <img width="450" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/>
-    <img width="450" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/dwireframe-sAP10.png"/>
+    <img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/fwireframe-sAP10.png"/>
+    <img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/fyork-sAP10.png"/>
     <br/>
     PR curves of sAP<sup>10</sup> on the F-Wireframe dataset (the left plot) and F-YorkUrban dataset (the right plot).
 </p> 
@@ -330,15 +330,27 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 </html>
 
 <p align="center">
-    <img width="450" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/sun360-sAP10.png"/>
+    <img width="300" src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/sun360-sAP10.png"/>
     <br/>
     PR curves of sAP<sup>10</sup> on the SUN360 dataset.
 </p> 
 
 
 ## Qualitative Results 
+
+### Pinhole Image Dataset
+
 <p align="center">
-    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Qualitative_results.png"/>
-    <br/>
-    Rows: (a)-(b) pinhole case, (c)-(d) fisheye case, (e)-(g) spherical case.
+    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/pinhole_result.png"/>
+</p> 
+
+### Fisheye Image Dataset
+
+<p align="center">
+    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/fisheye_result.png"/>
+</p> 
+
+### Spherical Image Dataset
+<p align="center">
+    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/spherical_result.png"/>
 </p> 
