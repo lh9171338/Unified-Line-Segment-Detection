@@ -1,0 +1,57 @@
+# General configurations
+gpu: 0
+seed: 0
+order: 1  # [1, 2, 3, 4]
+
+# Path configurations
+dataset_name: 'wireframe'  # ['wireframe', 'york', 'fwireframe', 'fyork', 'sun360']
+raw_dataset_path: 'dataset'
+train_dataset_path: 'dataset'
+test_dataset_path: 'dataset'
+groundtruth_path: 'dataset'
+output_path: 'output'
+figure_path: 'figure'
+log_path: 'log'
+model_path: 'model'
+model_name: 'pinhole.pkl'
+config_path: 'config'
+config_file: 'pinhole.yaml'
+
+# Train configurations
+num_workers: 4
+lr: 0.0004
+weight_decay: 0.0001
+step_size: 25
+num_epochs: 30
+train_batch_size: 6
+test_batch_size: 1
+print_freq: 50
+save_freq: 1
+save_temp: False
+
+# Test configurations
+save_image: False
+evaluate: False
+score_thresh: 0.95
+
+# Network configurations
+depth: 4
+num_stacks: 2
+num_blocks: 1
+num_feats: 256
+junc_thresh: 0.008
+junc_max_num: 300
+line_max_num: 5000
+num_pos_proposals: 300
+num_neg_proposals: 300
+nms_size: 3
+n_pts: 32
+weights: [0.5, 8.0, 0.25, 8.0, 0.25, 1.0, 0.1]
+
+# Dataset
+image_size: [512, 512]
+heatmap_size: [128, 128]
+n_stc_posl: 300
+n_stc_negl: 40
+mean: [0.43031373, 0.40718431, 0.38698431]
+std: [0.08735294, 0.08676078, 0.09109412]
