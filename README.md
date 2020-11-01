@@ -366,7 +366,8 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 
 ## Quickstart with the pretrained model
 
-There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in **model/** and 3 testing images in **dataset/**. <!--More pretrained models can be downloaded from [Google Drive]().-->
+* There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in [**model/**](https://github.com/lh9171338/Unified-Line-Segment-Detection/tree/main/model). <!--More pretrained models can be downloaded from [Google Drive]().-->
+* There are 3 testing images in **dataset/**. 
 
 ```
 python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
