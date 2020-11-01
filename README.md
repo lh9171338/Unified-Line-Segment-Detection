@@ -364,7 +364,7 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 
 ## Quickstart with the pretrained model
 
-There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in **model/** and 3 testing images in **dataset/**
+There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in **model/** and 3 testing images in **dataset/**. More pretrained models can be downloaded from [Google Drive]().
 
 ```
 python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
@@ -374,14 +374,27 @@ python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
 
 ### Data Preparation
 
-
+* Download the json-format dataset from [Google Drive]().
+* Convert the dataset from json-format to npz-format.
+```
+python dataset/json2npz_fisheye.py --config_file fisheye.yaml --dataset_name fwireframe --order 2
+```
+* Generate the ground truth.
+```
+python dataset/json2npz_fisheye_gt.py --config_file fisheye.yaml --dataset_name fwireframe
+```
 
 ### Train
 
+```
+python train.py --config_file fisheye.yaml --dataset_name fwireframe --order 2 [--gpu 0]
+```
 
 ### Test
 
-
+```
+python test.py --config_file fisheye.yaml --dataset_name fwireframe --order 2 --model_name best.pkl [--gpu 0] [--save_image] [--evaluate]
+```
 
 ### Evaluation
 
