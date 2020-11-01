@@ -355,6 +355,8 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
     <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/spherical_result.png"/>
 </p> 
 
+## Videos
+
 ## Requirements
 
 * python3
@@ -364,7 +366,7 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 
 ## Quickstart with the pretrained model
 
-There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in **model/** and 3 testing images in **dataset/**. More pretrained models can be downloaded from [Google Drive]().
+There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in **model/** and 3 testing images in **dataset/**. <!--More pretrained models can be downloaded from [Google Drive]().-->
 
 ```
 python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
@@ -374,12 +376,12 @@ python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
 
 ### Data Preparation
 
-* Download the json-format dataset from [Google Drive]().
+* Download the json-format dataset<!-- from [Google Drive]()-->.
 * Convert the dataset from json-format to npz-format.
 ```
 python dataset/json2npz_fisheye.py --config_file fisheye.yaml --dataset_name fwireframe --order 2
 ```
-* Generate the ground truth.
+* Generate the ground truth for evaluation.
 ```
 python dataset/json2npz_fisheye_gt.py --config_file fisheye.yaml --dataset_name fwireframe
 ```
@@ -398,12 +400,14 @@ python test.py --config_file fisheye.yaml --dataset_name fwireframe --order 2 --
 
 ### Evaluation
 
-* Evaluate mAP<sup>j</sup>, sAP, and FPS
+* Evaluate mAP<sup>J</sup>, sAP, and FPS
 ```
-python test.py --config_file pinhole.yaml --dataset_name pinhole --evaluate
+python test.py --config_file pinhole.yaml --dataset_name wireframe --evaluate
 ```
 * Evaluate AP<sup>H</sup>
 ```
-python metric/eval_APH.py --config_file pinhole.yaml --dataset_name pinhole
+python metric/eval_APH.py --config_file pinhole.yaml --dataset_name wireframe
 ```
+
+<!-- ## Citation -->
 
