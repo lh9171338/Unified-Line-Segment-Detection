@@ -29,62 +29,62 @@ def train(model, loader, cfg, device):
     best_sAP = [0.0, 0.0, 0.0]
     best_state_dict = None
     for epoch in range(1, cfg.num_epochs + 1):
-        # # Train
-        # model.train()
-        #
-        # for images, map_labels, metas in tqdm(loader['train'], desc='train: '):
-        #     images = images.to(device)
-        #     map_labels = {name: map_labels[name].to(device) for name in map_labels.keys()}
-        #     metas = {name: [meta.to(device) for meta in metas[name]] for name in metas.keys()}
-        #
-        #     map_preds, loi_scores, loi_labels = model(images, metas)
-        #     lmap_loss, jmap_loss, joff_loss, cmap_loss, coff_loss, lvec_loss  = lpn_loss_func(map_preds, map_labels)
-        #     loi_loss = loi_loss_func(loi_scores, loi_labels)
-        #
-        #     losses = [lmap_loss, jmap_loss, joff_loss, cmap_loss, coff_loss, lvec_loss, loi_loss]
-        #     loss = sum([weight * loss for weight, loss in zip(cfg.weights, losses)])
-        #
-        #     optimizer.zero_grad()
-        #     loss.backward()
-        #     optimizer.step()
-        #
-        #     # Visualize
-        #     if step % cfg.print_freq == 0:
-        #         image = images[0]
-        #         lmap_pred = map_preds['lmap'][0]
-        #         jmap_pred = map_preds['jmap'][0]
-        #         cmap_pred = map_preds['cmap'][0]
-        #         lmap_label = map_labels['lmap'][0]
-        #         jmap_label = map_labels['jmap'][0]
-        #         cmap_label = map_labels['cmap'][0]
-        #         image = F.interpolate(image[None, :, :, :], (lmap_label.shape[-2], lmap_label.shape[-1]))[0]
-        #         lr = scheduler.get_last_lr()[0]
-        #
-        #         loi_label = loi_labels[0].detach().cpu().numpy() > 0.5
-        #         loi_score = loi_scores[0].detach().cpu().numpy() > 0.5
-        #         tn, fp, fn, tp = confusion_matrix(loi_label, loi_score).ravel()
-        #
-        #         print('epoch: %d/%d | loss: %6f | lmap loss: %6f | jmap loss: %6f | joff loss: %6f | cmap loss: %6f | '
-        #               'coff loss: %6f | lvec loss: %6f | loi loss: %6f | lr: %e' % (epoch, cfg.num_epochs, loss.item(),
-        #               lmap_loss.item(), jmap_loss.item(), joff_loss.item(), cmap_loss.item(), coff_loss.item(),
-        #               lvec_loss.item(), loi_loss.item(), lr))
-        #         image_list = [loader['train'].dataset.DeNormalize(image),
-        #                       lmap_label.repeat((3, 1, 1)), lmap_pred.repeat((3, 1, 1)),
-        #                       jmap_label.repeat((3, 1, 1)), jmap_pred.repeat((3, 1, 1)),
-        #                       cmap_label.repeat((3, 1, 1)), cmap_pred.repeat((3, 1, 1))]
-        #         writer.add_images('image', image_list, step, dataformats='CHW')
-        #         writer.add_scalar('loss', loss, step)
-        #         writer.add_scalar('lmap loss', lmap_loss, step)
-        #         writer.add_scalar('jmap loss', jmap_loss, step)
-        #         writer.add_scalar('joff loss', joff_loss, step)
-        #         writer.add_scalar('cmap loss', cmap_loss, step)
-        #         writer.add_scalar('coff loss', coff_loss, step)
-        #         writer.add_scalar('lvec loss', lvec_loss, step)
-        #         writer.add_scalar('loi loss', loi_loss, step)
-        #         writer.add_scalars('metrics', {'tn': tn, 'fp': fp, 'fn': fn, 'tp': tp}, step)
-        #         writer.add_scalar('lr', lr, step)
-        #     step += 1
-        # scheduler.step()
+        # Train
+        model.train()
+
+        for images, map_labels, metas in tqdm(loader['train'], desc='train: '):
+            images = images.to(device)
+            map_labels = {name: map_labels[name].to(device) for name in map_labels.keys()}
+            metas = {name: [meta.to(device) for meta in metas[name]] for name in metas.keys()}
+
+            map_preds, loi_scores, loi_labels = model(images, metas)
+            lmap_loss, jmap_loss, joff_loss, cmap_loss, coff_loss, lvec_loss  = lpn_loss_func(map_preds, map_labels)
+            loi_loss = loi_loss_func(loi_scores, loi_labels)
+
+            losses = [lmap_loss, jmap_loss, joff_loss, cmap_loss, coff_loss, lvec_loss, loi_loss]
+            loss = sum([weight * loss for weight, loss in zip(cfg.weights, losses)])
+
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            # Visualize
+            if step % cfg.print_freq == 0:
+                image = images[0]
+                lmap_pred = map_preds['lmap'][0]
+                jmap_pred = map_preds['jmap'][0]
+                cmap_pred = map_preds['cmap'][0]
+                lmap_label = map_labels['lmap'][0]
+                jmap_label = map_labels['jmap'][0]
+                cmap_label = map_labels['cmap'][0]
+                image = F.interpolate(image[None, :, :, :], (lmap_label.shape[-2], lmap_label.shape[-1]))[0]
+                lr = scheduler.get_last_lr()[0]
+
+                loi_label = loi_labels[0].detach().cpu().numpy() > 0.5
+                loi_score = loi_scores[0].detach().cpu().numpy() > 0.5
+                tn, fp, fn, tp = confusion_matrix(loi_label, loi_score).ravel()
+
+                print('epoch: %d/%d | loss: %6f | lmap loss: %6f | jmap loss: %6f | joff loss: %6f | cmap loss: %6f | '
+                      'coff loss: %6f | lvec loss: %6f | loi loss: %6f | lr: %e' % (epoch, cfg.num_epochs, loss.item(),
+                      lmap_loss.item(), jmap_loss.item(), joff_loss.item(), cmap_loss.item(), coff_loss.item(),
+                      lvec_loss.item(), loi_loss.item(), lr))
+                image_list = [loader['train'].dataset.DeNormalize(image),
+                              lmap_label.repeat((3, 1, 1)), lmap_pred.repeat((3, 1, 1)),
+                              jmap_label.repeat((3, 1, 1)), jmap_pred.repeat((3, 1, 1)),
+                              cmap_label.repeat((3, 1, 1)), cmap_pred.repeat((3, 1, 1))]
+                writer.add_images('image', image_list, step, dataformats='CHW')
+                writer.add_scalar('loss', loss, step)
+                writer.add_scalar('lmap loss', lmap_loss, step)
+                writer.add_scalar('jmap loss', jmap_loss, step)
+                writer.add_scalar('joff loss', joff_loss, step)
+                writer.add_scalar('cmap loss', cmap_loss, step)
+                writer.add_scalar('coff loss', coff_loss, step)
+                writer.add_scalar('lvec loss', lvec_loss, step)
+                writer.add_scalar('loi loss', loi_loss, step)
+                writer.add_scalars('metrics', {'tn': tn, 'fp': fp, 'fn': fn, 'tp': tp}, step)
+                writer.add_scalar('lr', lr, step)
+            step += 1
+        scheduler.step()
 
         if epoch % cfg.save_freq == 0:
             # Save model
@@ -147,6 +147,7 @@ if __name__ == '__main__':
     # Parameter
     cfg = parse()
     print(cfg)
+    os.makedirs(cfg.model_path, exist_ok=True)
 
     # Use GPU or CPU
     use_gpu = cfg.gpu >= 0 and torch.cuda.is_available()

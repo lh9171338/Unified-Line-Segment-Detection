@@ -101,6 +101,7 @@ if __name__ == "__main__":
     os.chdir('..')
     cfg = parse()
     print(cfg)
+    os.makedirs(cfg.figure_path, exist_ok=True)
 
     start = time.time()
     APH, FH = eval_APH(cfg)

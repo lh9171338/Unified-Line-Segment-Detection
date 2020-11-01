@@ -90,6 +90,7 @@ if __name__ == '__main__':
     # Parameter
     cfg = parse()
     print(cfg)
+    os.makedirs(cfg.output_path, exist_ok=True)
 
     # Use GPU or CPU
     use_gpu = cfg.gpu >= 0 and torch.cuda.is_available()

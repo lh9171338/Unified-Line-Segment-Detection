@@ -29,11 +29,6 @@ def parse():
     cfg = CfgNode.load_cfg(open(yaml_file))
     cfg.merge_from_list(opts_list)
 
-    # Create path
-    os.makedirs(cfg.model_path, exist_ok=True)
-    os.makedirs(cfg.output_path, exist_ok=True)
-    os.makedirs(cfg.figure_path, exist_ok=True)
-
     cfg.log_path = '{}/{}'.format(cfg.log_path, datetime.now().strftime("%Y%m%d-%H%M"))
     cfg.raw_dataset_path = os.path.join(cfg.raw_dataset_path, cfg.dataset_name + '_raw')
     cfg.train_dataset_path = os.path.join(cfg.train_dataset_path, cfg.dataset_name + f'_{cfg.order}')
@@ -41,9 +36,6 @@ def parse():
     cfg.groundtruth_path = os.path.join(cfg.groundtruth_path, cfg.dataset_name)
     cfg.output_path = os.path.join(cfg.output_path, cfg.dataset_name)
     cfg.figure_path = os.path.join(cfg.figure_path, cfg.dataset_name)
-
-    os.makedirs(cfg.output_path, exist_ok=True)
-    os.makedirs(cfg.figure_path, exist_ok=True)
 
     cfg.image_size = tuple(cfg.image_size)
     cfg.heatmap_size = tuple(cfg.heatmap_size)
