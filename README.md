@@ -1,9 +1,9 @@
 [<img height="23" src="https://github.com/lh9171338/Outline/blob/master/icon.jpg"/>](https://github.com/lh9171338/Outline) Unified Line Segment Detection
 ===
-The code will be released soon.
+This repository contains the official PyTorch implementation of the paper: [ULSD: Unified Line Segment Detection across Pinhole, Fisheye, and Spherical Cameras]().
 
 ## Introduction
-[ULSD]() is a unified line segment detection method for arbitrarily distorted images from a pinhole, fisheye, or spherical camera. With a novel line segment representation based on the Bezier curve, our method can detect arbitrarily distorted line segments. Experimental results on the dataset of pinhole images, fisheye images, and spherical images, demonstrate that it achieves state-of-the-art (SOTA) performance and the fastest speed among the deep learning-based methods.
+[ULSD]() is a unified line segment detection method for both distorted and undistorted images from pinhole, fisheye or spherical cameras. With a novel line segment representation based on the Bezier curve, our method can detect arbitrarily distorted line segments. Experimental results on the pinhole, fisheye, and spherical image datasets validate the superiority of the proposed ULSD to the SOTA methods both in accuracy and efficiency (40.6fps for pinhole images).
 
 ## Network Architecture
 <p align="center"><img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/Network.png"/></p>
@@ -191,6 +191,20 @@ The code will be released soon.
         <td align="center">31.5</td>          
     </tr>   
     <tr>
+        <td align="center">HAWP<sup>+</sup></td>
+        <td align="center">51.2</td>
+        <td align="center">56.4</td>    
+        <td align="center">58.7</td>    
+        <td align="center">55.4</td>    
+        <td align="center">\</td>    
+        <td align="center">22.9</td>
+        <td align="center">25.8</td>    
+        <td align="center">27.6</td>    
+        <td align="center">25.4</td>    
+        <td align="center">\</td>   
+        <td align="center">31.5</td>          
+    </tr>  
+    <tr>
         <td align="center">ULSD<sup>2</sup>(ours)</td>
         <td align="center"><b>56.5</b></td>
         <td align="center"><b>61.2</b></td>    
@@ -287,30 +301,30 @@ The code will be released soon.
     </tr>   
     <tr>
         <td align="center">ULSD<sup>2</sup>(ours)</td>
-        <td align="center"><b>58.5</b></td>
-        <td align="center"><b>64.4</b></td>    
-        <td align="center"><b>66.8</b></td>    
-        <td align="center"><b>63.2</b></td>    
-        <td align="center">46.6</td>          
-        <td align="center">24.2</td>          
+        <td align="center"><b>61.9</b></td>
+        <td align="center"><b>67.6</b></td>    
+        <td align="center"><b>69.8</b></td>    
+        <td align="center"><b>66.4</b></td>    
+        <td align="center"><b>47.3</b></td>          
+        <td align="center">24.8</td>          
     </tr>   
     <tr>
         <td align="center">ULSD<sup>3</sup>(ours)</td>
-        <td align="center">57.2</td>
-        <td align="center">64.0</td>    
-        <td align="center">66.1</td>    
-        <td align="center">62.4</td>    
-        <td align="center"><b>46.8</b></td>     
-        <td align="center">23.8</td>          
+        <td align="center">60.9</td>
+        <td align="center">66.7</td>    
+        <td align="center">68.7</td>    
+        <td align="center">65.4</td>    
+        <td align="center">47.0</td>     
+        <td align="center">24.6</td>          
     </tr>  
     <tr>
         <td align="center">ULSD<sup>4</sup>(ours)</td>
-        <td align="center">56.7</td>
-        <td align="center">63.1</td>    
-        <td align="center">65.6</td>    
-        <td align="center">61.8</td>    
-        <td align="center">46.7</td>     
-        <td align="center">23.3</td>          
+        <td align="center">60.3</td>
+        <td align="center">66.1</td>    
+        <td align="center">68.0</td>    
+        <td align="center">64.8</td>    
+        <td align="center"><b>47.3</b></td>     
+        <td align="center">24.4</td>          
     </tr>
 </table>
 </html>
