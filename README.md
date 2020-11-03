@@ -376,7 +376,7 @@ conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
 
 ## Quickstart with the pretrained model
 
-* There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in [**model/**](https://github.com/lh9171338/Unified-Line-Segment-Detection/tree/main/model). <!--More pretrained models can be downloaded from [Google Drive]().-->
+* There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in Google drive [**model**](https://drive.google.com/drive/folders/1QyNjfLKoKqX8smi3e922Z8PEeBZid_St). Please download them and put in the **model/** folder.  <!--More pretrained models can be downloaded from [Google Drive]().-->
 * There are 3 testing images in **dataset/**. 
 
 ```

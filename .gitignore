@@ -1,3 +1,5 @@
 network/__pycache__/
+util/__pycache__/
+config/__pycache__/
 output/
 .vscode/
