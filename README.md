@@ -364,6 +364,16 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 * CUDA==10.1
 * opencv, numpy, scipy, matplotlib, argparse, yacs, tqdm, json, multiprocessing, sklearn, tensorboardX
 
+## Step-by-step installation
+```
+conda create --name ulsd python=3.7
+conda activate ulsd
+
+pip install -r requirements.txt
+
+conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
+```
+
 ## Quickstart with the pretrained model
 
 * There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in [**model/**](https://github.com/lh9171338/Unified-Line-Segment-Detection/tree/main/model). <!--More pretrained models can be downloaded from [Google Drive]().-->
