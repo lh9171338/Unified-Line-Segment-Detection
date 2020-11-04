@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fbb53786-74a0-42da-99a2-3293e1ca9171" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/cfg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metric/eval_APH.py" beforeDir="false" afterPath="$PROJECT_DIR$/metric/eval_APH.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metric/eval_sAP.py" beforeDir="false" afterPath="$PROJECT_DIR$/metric/eval_sAP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/fisheye/P1020845.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/spherical/000218.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/config/cfg.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="430">
-              <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+              <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -44,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="446">
-              <caret line="92" column="47" lean-forward="true" selection-start-line="92" selection-start-column="47" selection-end-line="92" selection-end-column="47" />
+              <caret line="92" column="47" selection-start-line="92" selection-start-column="47" selection-end-line="92" selection-end-column="47" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -56,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
-              <caret line="149" column="46" lean-forward="true" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="46" />
+              <caret line="149" column="46" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="46" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -108,11 +101,6 @@
               <item name="Github" type="b2602c69:ProjectViewProjectNode" />
               <item name="Github" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Github" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Github" type="462c0819:PsiDirectoryNode" />
-              <item name="metric" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -121,7 +109,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ULSD" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -179,7 +167,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -284,7 +271,7 @@
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="149" column="46" lean-forward="true" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="46" />
+          <caret line="149" column="46" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="46" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -294,7 +281,7 @@
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
-          <caret line="92" column="47" lean-forward="true" selection-start-line="92" selection-start-column="47" selection-end-line="92" selection-end-column="47" />
+          <caret line="92" column="47" selection-start-line="92" selection-start-column="47" selection-end-line="92" selection-end-column="47" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -318,7 +305,7 @@
     <entry file="file://$PROJECT_DIR$/config/cfg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
-          <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
