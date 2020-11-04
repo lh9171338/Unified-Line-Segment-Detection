@@ -395,6 +395,7 @@ python json2npz.py --config_file fisheye.yaml --dataset_name fwireframe --order 
 ```
 * Generate the ground truth for evaluation.
 ```
+cd dataset/
 python json2npz_gt.py --config_file fisheye.yaml --dataset_name fwireframe
 ```
 
@@ -418,6 +419,7 @@ python test.py --config_file pinhole.yaml --dataset_name wireframe --evaluate
 ```
 * Evaluate AP<sup>H</sup>
 ```
+cd metric/
 python metric/eval_APH.py --config_file pinhole.yaml --dataset_name wireframe
 ```
 
