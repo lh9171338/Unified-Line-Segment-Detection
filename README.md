@@ -376,8 +376,8 @@ conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
 
 ## Quickstart with the pretrained model
 
-* There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in Google drive [**model**](https://drive.google.com/drive/folders/1QyNjfLKoKqX8smi3e922Z8PEeBZid_St). Please download them and put in the **model/** folder.  <!--More pretrained models can be downloaded from [Google Drive]().-->
-* There are 3 testing images in **dataset/**. 
+* There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in [Google drive](https://drive.google.com/drive/folders/1QyNjfLKoKqX8smi3e922Z8PEeBZid_St). Please download them and put in the **model/** folder.  
+* There are 3 testing images in **dataset/** folder. 
 
 ```
 python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
@@ -390,11 +390,12 @@ python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
 * Download the json-format dataset<!-- from [Google Drive]()-->.
 * Convert the dataset from json-format to npz-format.
 ```
-python dataset/json2npz_fisheye.py --config_file fisheye.yaml --dataset_name fwireframe --order 2
+cd dataset/
+python json2npz.py --config_file fisheye.yaml --dataset_name fwireframe --order 2
 ```
 * Generate the ground truth for evaluation.
 ```
-python dataset/json2npz_fisheye_gt.py --config_file fisheye.yaml --dataset_name fwireframe
+python json2npz_gt.py --config_file fisheye.yaml --dataset_name fwireframe
 ```
 
 ### Train
