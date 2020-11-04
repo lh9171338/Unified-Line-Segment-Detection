@@ -10,7 +10,7 @@ from itertools import combinations
 from scipy.ndimage import zoom
 import multiprocessing
 import time
-import util.pinhole as pin
+import util.camera as cam
 import util.bezier as bez
 import util.augment as aug
 from config.cfg import parse
@@ -106,10 +106,8 @@ def save_npz(prefix, image, lines, centers, cfg):
         coff[:, cint[1], cint[0]] = c - cint - 0.5
         lvec[:, :, cint[1], cint[0]] = pts - c
 
-        rr, cc, value = skimage.draw.line_aa(int(v0[1]), int(v0[0]), int(v1[1]), int(v1[0]))
-        lmap[0, rr, cc] = np.maximum(lmap[0, rr, cc], value)
-
     lvec = lvec.reshape((-1,) + heatmap_size[::-1])
+    lmap[0] = bez.insert_line(lmap[0], lpos, color=255) / 255.0
     juncs = np.asarray([np.array(junc) for junc in list(juncs.keys())])
     linds = np.asarray(linds)
 
@@ -194,7 +192,7 @@ def json2npz(src_path, dst_path, split, cfg, plot=False):
                 cv2.imshow('image', image)
                 cv2.waitKey()
 
-    parmap(call_back, dataset, nprocs=multiprocessing.cpu_count())
+    parmap(call_back, dataset)
 
 
 if __name__ == "__main__":
@@ -210,7 +208,7 @@ if __name__ == "__main__":
 
     start = time.time()
     for split in ['train', 'test']:
-        json2npz(src_path, dst_path, split, cfg)
+        json2npz(src_path, dst_path, split, cfg, plot=False)
 
     end = time.time()
     print('Time: %f s' % (end - start))

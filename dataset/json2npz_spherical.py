@@ -7,7 +7,7 @@ import numpy as np
 import multiprocessing
 import time
 import shutil
-import util.spherical as sph
+import util.camera as cam
 import util.bezier as bez
 import util.augment as aug
 from config.cfg import parse
@@ -94,7 +94,7 @@ def save_npz(prefix, image, lines, centers, cfg):
         lvec[:, :, cint[1], cint[0]] = pts - c
 
     lvec = lvec.reshape((-1,) + heatmap_size[::-1])
-    lmap[0] = sph.insert_line(lmap[0], lpos[:, [0, -1]], color=255) / 255.0
+    lmap[0] = bez.insert_line(lmap[0], lpos, color=255) / 255.0
 
     np.savez_compressed(
         f'{prefix}.npz',
@@ -137,13 +137,14 @@ def json2npz(src_path, dst_path, split, cfg, plot=False):
         image0 = cv2.imread(os.path.join(src_path, 'image', filename))
         width, height = image0.shape[1], image0.shape[0]
         image_size = (width, height)
+        camera = cam.Spherical(image_size)
 
         if split == 'train':
             for i in range(len(tfs)):
                 image, lines = tfs[i](image0, lines0)
-                lines = sph.truncate_line(lines, image_size)
-                lines = sph.remove_line(lines, thresh=10.0)
-                pts_list = sph.interp_line(lines, image_size, resolution=0.01)
+                lines = camera.truncate_line(lines)
+                lines = camera.remove_line(lines, thresh=10.0)
+                pts_list = camera.interp_line(lines, resolution=0.01)
                 lines = bez.fit_line(pts_list, order=2)[0]
                 centers = lines[:, 1]
                 lines = bez.fit_line(pts_list, order=cfg.order)[0]
@@ -160,9 +161,9 @@ def json2npz(src_path, dst_path, split, cfg, plot=False):
 
         else:
             image, lines = image0.copy(), lines0.copy()
-            lines = sph.truncate_line(lines, image_size)
-            lines = sph.remove_line(lines, thresh=10.0)
-            pts_list = sph.interp_line(lines, image_size, resolution=0.01)
+            lines = camera.truncate_line(lines)
+            lines = camera.remove_line(lines, thresh=10.0)
+            pts_list = camera.interp_line(lines, resolution=0.01)
             lines = bez.fit_line(pts_list, order=2)[0]
             centers = lines[:, 1]
             lines = bez.fit_line(pts_list, order=cfg.order)[0]
@@ -177,7 +178,7 @@ def json2npz(src_path, dst_path, split, cfg, plot=False):
                 cv2.imshow('image', image)
                 cv2.waitKey()
 
-    parmap(call_back, dataset)
+    parmap(call_back, dataset, nprocs=1)
 
 
 if __name__ == "__main__":

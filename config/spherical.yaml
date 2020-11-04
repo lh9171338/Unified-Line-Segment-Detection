@@ -1,6 +1,7 @@
 # General configurations
 gpu: 0
 seed: 0
+type: 'spherical'
 order: 2  # [1, 2, 3, 4]
 
 # Path configurations
@@ -13,7 +14,7 @@ output_path: 'output'
 figure_path: 'figure'
 log_path: 'log'
 model_path: 'model'
-model_name: 'spherical.pkl'
+model_name: 'spherical-2.pkl'
 config_path: 'config'
 config_file: 'spherical.yaml'
 

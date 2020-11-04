@@ -124,20 +124,38 @@ def json2npz(src_path, dst_path, split, cfg, plot=False):
         shutil.rmtree(os.path.join(dst_path, split))
     os.makedirs(os.path.join(dst_path, split), exist_ok=True)
 
-    tfs = [aug.Noop(), aug.HorizontalFlip(), aug.VerticalFlip(),
-            aug.Compose([aug.HorizontalFlip(), aug.VerticalFlip()])]
+    if cfg.type == 'spherical':
+        tfs = [aug.Noop(), aug.HorizontalFlip(), aug.VerticalFlip(),
+                aug.Compose([aug.HorizontalFlip(), aug.VerticalFlip()]),
+               aug.HorizontalMove(degree=180.0),
+               aug.Compose([aug.HorizontalMove(degree=180.0), aug.HorizontalFlip()]),
+               aug.Compose([aug.HorizontalMove(degree=180.0), aug.VerticalFlip()]),
+               aug.Compose([aug.HorizontalMove(degree=180.0), aug.HorizontalFlip(), aug.VerticalFlip()])]
+    else:
+        tfs = [aug.Noop(), aug.HorizontalFlip(), aug.VerticalFlip(),
+               aug.Compose([aug.HorizontalFlip(), aug.VerticalFlip()])]
 
     def call_back(data):
         filename = data['filename']
         lines0 = np.asarray(data['lines'])
         image0 = cv2.imread(os.path.join(src_path, 'image', filename))
-        coeff = {'K': np.asarray(data['K']), 'D': np.asarray(data['D'])}
-        camera = cam.Fisheye(coeff)
+
+        if cfg.type == 'pinhole':
+            camera = cam.Pinhole()
+        elif cfg.type == 'fisheye':
+            coeff = {'K': np.asarray(data['K']), 'D': np.asarray(data['D'])}
+            camera = cam.Fisheye(coeff)
+        else:
+            image_size = (image0.shape[1], image0.shape[0])
+            camera = cam.Spherical(image_size)
 
         if split == 'train':
             for i in range(len(tfs)):
                 image, lines = tfs[i](image0, lines0)
-                pts_list = camera.interp_line(lines, resolution=0.01)
+                if cfg.type == 'spherical':
+                    lines = camera.truncate_line(lines)
+                    lines = camera.remove_line(lines, thresh=10.0)
+                pts_list = camera.interp_line(lines)
                 lines = bez.fit_line(pts_list, order=2)[0]
                 centers = lines[:, 1]
                 lines = bez.fit_line(pts_list, order=cfg.order)[0]
@@ -154,7 +172,10 @@ def json2npz(src_path, dst_path, split, cfg, plot=False):
 
         else:
             image, lines = image0.copy(), lines0.copy()
-            pts_list = camera.interp_line(lines, coeff, resolution=0.01)
+            if cfg.type == 'spherical':
+                lines = camera.truncate_line(lines)
+                lines = camera.remove_line(lines, thresh=10.0)
+            pts_list = camera.interp_line(lines)
             lines = bez.fit_line(pts_list, order=2)[0]
             centers = lines[:, 1]
             lines = bez.fit_line(pts_list, order=cfg.order)[0]
@@ -185,7 +206,7 @@ if __name__ == "__main__":
 
     start = time.time()
     for split in ['train', 'test']:
-        json2npz(src_path, dst_path, split, cfg)
+        json2npz(src_path, dst_path, split, cfg, plot=False)
 
     end = time.time()
     print('Time: %f s' % (end - start))

@@ -1,6 +1,7 @@
 # General configurations
 gpu: 0
 seed: 0
+type: 'pinhole'
 order: 1  # [1, 2, 3, 4]
 
 # Path configurations
@@ -32,7 +33,7 @@ save_temp: False
 # Test configurations
 save_image: False
 evaluate: False
-score_thresh: 0.95
+score_thresh: 0.9
 
 # Network configurations
 depth: 4

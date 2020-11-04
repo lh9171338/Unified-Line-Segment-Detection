@@ -17,8 +17,7 @@ class Noop:
         pass
 
     def __call__(self, image, lines):
-        image, lines = image.copy(), lines.copy()
-        return image, lines
+        return image.copy(), lines.copy()
 
 
 class HorizontalFlip:
@@ -26,12 +25,12 @@ class HorizontalFlip:
         pass
 
     def __call__(self, image, lines):
-        image, lines = image.copy(), lines.copy()
+        lines = lines.copy()
         width, height = image.shape[1], image.shape[0]
         image = image[:, ::-1]
         lines[:, :, 0] = width - lines[:, :, 0]
         lines[:, :, 0] = np.clip(lines[:, :, 0], 0.0, width - 1e-4)
-        return image, lines
+        return image.copy(), lines
 
 
 class VerticalFlip:
@@ -39,12 +38,12 @@ class VerticalFlip:
         pass
 
     def __call__(self, image, lines):
-        image, lines = image.copy(), lines.copy()
+        lines =  lines.copy()
         width, height = image.shape[1], image.shape[0]
         image = image[::-1, :]
         lines[:, :, 1] = height - lines[:, :, 1]
         lines[:, :, 1] = np.clip(lines[:, :, 1], 0.0, height - 1e-4)
-        return image, lines
+        return image.copy(), lines
 
 
 class HorizontalMove:
@@ -52,9 +51,9 @@ class HorizontalMove:
         self.degree = degree
 
     def __call__(self, image, lines):
-        image, lines = image.copy(), lines.copy()
+        lines = lines.copy()
         width, height = image.shape[1], image.shape[0]
         deltax = int(round(width * self.degree / 360.0)) % width
         image = np.concatenate((image[:, deltax:], image[:, :deltax]), axis=1)
         lines[:, :, 0] = (lines[:, :, 0] - deltax) % width
-        return image, lines
+        return image.copy(), lines

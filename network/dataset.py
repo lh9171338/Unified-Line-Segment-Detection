@@ -34,6 +34,7 @@ class Dataset(Data.Dataset):
         else:
             image_file_list = glob.glob(os.path.join(path, '*.png')) + \
                               glob.glob(os.path.join(path, '*.jpg'))
+            image_file_list.sort()
             self.file_list = [image_file for image_file in image_file_list]
 
         self.with_label = with_label

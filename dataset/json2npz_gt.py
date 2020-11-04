@@ -5,7 +5,8 @@ import json
 import cv2
 import numpy as np
 from tqdm import tqdm
-import util.pinhole as pin
+import util.camera as cam
+import util.bezier as bez
 from config.cfg import parse
 
 
@@ -26,7 +27,6 @@ def save_npz(prefix, image, lines, heatmap_size):
     cv2.imwrite(f'{prefix}.png', image)
 
 
-
 def json2npz(src_path, dst_path, cfg, plot=False):
     split = 'test'
     os.makedirs(dst_path, exist_ok=True)
@@ -40,11 +40,25 @@ def json2npz(src_path, dst_path, cfg, plot=False):
         lines = np.asarray(data['lines'])
         image = cv2.imread(os.path.join(src_path, 'image', filename))
 
+        if cfg.type == 'fisheye':
+            coeff = {'K': np.asarray(data['K']), 'D': np.asarray(data['D'])}
+            camera = cam.Fisheye(coeff)
+            pts_list = camera.interp_line(lines, resolution=0.01)
+            lines = bez.fit_line(pts_list, order=6)[0]
+        elif cfg.type == 'spherical':
+            image_size = (image.shape[1], image.shape[0])
+            camera = cam.Spherical(image_size)
+            lines = camera.truncate_line(lines)
+            lines = camera.remove_line(lines, thresh=10.0)
+            pts_list = camera.interp_line(lines, resolution=0.01)
+            lines = bez.fit_line(pts_list, order=6)[0]
+
         prefix = os.path.join(dst_path, filename.split('.')[0])
         save_npz(prefix, image, lines.copy(), cfg.heatmap_size)
 
         if plot:
-            pin.insert_line(image, lines, color=[0, 0, 255])
+            bez.insert_line(image, lines, color=[0, 0, 255])
+            bez.insert_point(image, lines, color=[255, 0, 0], thickness=4)
             cv2.namedWindow('image', 0)
             cv2.imshow('image', image)
             cv2.waitKey()
