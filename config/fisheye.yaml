@@ -14,7 +14,7 @@ output_path: 'output'
 figure_path: 'figure'
 log_path: 'log'
 model_path: 'model'
-model_name: 'fisheye-2.pkl'
+model_name: 'fisheye.pkl'
 config_path: 'config'
 config_file: 'fisheye.yaml'
 
