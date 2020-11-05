@@ -368,7 +368,10 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 ```
 conda create --name ulsd python=3.7
 conda activate ulsd
+cd <ulsd-path>
 
+git clone https://github.com/lh9171338/Unified-Line-Segment-Detection.git
+cd Unified-Line-Segment-Detection
 pip install -r requirements.txt
 
 conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
