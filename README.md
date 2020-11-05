@@ -368,12 +368,12 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 ```
 conda create --name ulsd python=3.7
 conda activate ulsd
-cd <ulsd-path>
 
+cd <ulsd-path>
 git clone https://github.com/lh9171338/Unified-Line-Segment-Detection.git
 cd Unified-Line-Segment-Detection
-pip install -r requirements.txt
 
+pip install -r requirements.txt
 conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
 ```
 
@@ -385,6 +385,7 @@ conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
 ```
 python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
 ```
+* The result is saved in **output/** folder.
 
 ## Training & Testing
 
