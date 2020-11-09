@@ -1,9 +1,9 @@
 [<img height="23" src="https://github.com/lh9171338/Outline/blob/master/icon.jpg"/>](https://github.com/lh9171338/Outline) Unified Line Segment Detection
 ===
-This repository contains the official PyTorch implementation of the paper: [ULSD: Unified Line Segment Detection across Pinhole, Fisheye, and Spherical Cameras]().
+This repository contains the official PyTorch implementation of the paper: [ULSD: Unified Line Segment Detection across Pinhole, Fisheye, and Spherical Cameras](https://arxiv.org/abs/2011.03174).
 
 ## Introduction
-[ULSD]() is a unified line segment detection method for both distorted and undistorted images from pinhole, fisheye or spherical cameras. With a novel line segment representation based on the Bezier curve, our method can detect arbitrarily distorted line segments. Experimental results on the pinhole, fisheye, and spherical image datasets validate the superiority of the proposed ULSD to the SOTA methods both in accuracy and efficiency (40.6fps for pinhole images).
+[ULSD](https://arxiv.org/abs/2011.03174) is a unified line segment detection method for both distorted and undistorted images from pinhole, fisheye or spherical cameras. With a novel line segment representation based on the Bezier curve, our method can detect arbitrarily distorted line segments. Experimental results on the pinhole, fisheye, and spherical image datasets validate the superiority of the proposed ULSD to the SOTA methods both in accuracy and efficiency (40.6fps for pinhole images).
 
 The video demos can be seen here:
 
@@ -360,7 +360,9 @@ alt="cla" width="400" height="400" border="5" /></a>
     <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/spherical_result.png"/>
 </p> 
 
-<!--## Videos-->
+## Videos
+
+![image](https://youtu.be/9h79zK2H8OI)
 
 ## Requirements
 
@@ -434,11 +436,13 @@ python metric/eval_APH.py --config_file pinhole.yaml --dataset_name wireframe
 
 ## Citation
 ```
-@inproceedings{Li2020ULSD,
-  title={ULSD: Unified Line Segment Detection across Pinhole, Fisheye, and Spherical Cameras},
-  author={Hao Li, Huai Yu, Wen Yang, Lei Yu and Sebastian Scherer},
-  journal={Submitted to ICRA2021},
-  url = {https://youtu.be/9h79zK2H8OI}
+@misc{li2020ulsd,
+      title={ULSD: Unified Line Segment Detection across Pinhole, Fisheye, and Spherical Cameras}, 
+      author={Hao Li and Huai Yu and Wen Yang and Lei Yu and Sebastian Scherer},
+      year={2020},
+      eprint={2011.03174},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
