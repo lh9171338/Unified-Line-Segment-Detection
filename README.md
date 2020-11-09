@@ -362,7 +362,7 @@ alt="cla" width="400" height="400" border="5" /></a>
 
 ## Videos
 
-![image](https://youtu.be/9h79zK2H8OI)
+[YouTube](https://youtu.be/9h79zK2H8OI)
 
 ## Requirements
 
