@@ -1,5 +1,7 @@
-network/__pycache__/
-util/__pycache__/
-config/__pycache__/
-output/
-.vscode/
+/dataset/*
+!dataset/*.py
+/model/
+/output/
+/log/
+/.idea/
+*/*/*.pyc
