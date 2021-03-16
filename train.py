@@ -158,6 +158,7 @@ if __name__ == '__main__':
     random.seed(cfg.seed)
     np.random.seed(cfg.seed)
     torch.manual_seed(cfg.seed)
+    torch.backends.cudnn.deterministic = True
     if use_gpu:
         torch.cuda.manual_seed(cfg.seed)
 
