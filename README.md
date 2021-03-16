@@ -10,6 +10,8 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
     
 ## Results
 ### Pinhole Image Datasets
+
+#### Quantitative Comparisons
 <html>
 <table align="center">
     <tr>
@@ -125,7 +127,7 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 		<td align="center">30.9</td>        
     </tr>   
 	<tr>
-		<td align="center">ULSD<sup>1</sup></td>
+		<td align="center">ULSD<sup>1</sup>(ours)</td>
 		<td align="center"><b>65.3</b></td>
 		<td align="center">69.0</td>
 		<td align="center">70.6</td>
@@ -143,7 +145,7 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 		<td align="center">38.3</td>
 	</tr>
 	<tr>
-		<td align="center">ULSD<sup>2</sup></td>
+		<td align="center">ULSD<sup>2</sup>(ours)</td>
 		<td align="center"><b>65.3</b></td>
 		<td align="center"><b>69.2</b></td>
 		<td align="center"><b>70.9</b></td>
@@ -161,7 +163,7 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 		<td align="center">37.2</td>
 	</tr>
 	<tr>
-		<td align="center">ULSD<sup>3</sup></td>
+		<td align="center">ULSD<sup>3</sup>(ours)</td>
 		<td align="center">65.0</td>
 		<td align="center">68.9</td>
 		<td align="center">70.5</td>
@@ -179,7 +181,7 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 		<td align="center">37.6</td>
 	</tr>
 	<tr>
-        <td align="center">ULSD<sup>4</sup></td>
+                <td align="center">ULSD<sup>4</sup>(ours)</td>
 		<td align="center"><b>65.3</b></td>
 		<td align="center"><b>69.2</b></td>
 		<td align="center"><b>70.9</b></td>
@@ -201,17 +203,23 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 
 ---
 
-<p align="center">
-    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/pinholes.png"/>
-</p> 
-
----
+#### Qualitative Comparisons
 
 <p align="center">
     <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/pinhole_result.png"/>
 </p> 
 
+---
+
+#### More Results of ULSD
+
+<p align="center">
+    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/pinholes.png"/>
+</p> 
+
 ### Fisheye Image Datasets
+
+#### Quantitative Comparisons
 
 <html>
 <table align="center">
@@ -322,17 +330,23 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 
 ---
 
-<p align="center">
-    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/fisheyes.png"/>
-</p> 
-
----
+#### Qualitative Comparisons
 
 <p align="center">
     <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/fisheye_result.png"/>
 </p> 
 
+---
+
+#### More Results of ULSD
+
+<p align="center">
+    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/fisheyes.png"/>
+</p> 
+
 ### Spherical Image Dataset
+
+#### Quantitative Comparisons
 
 <html>
 <table align="center">
@@ -405,17 +419,20 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 </table>
 </html>
 
-
 ---
 
+#### Qualitative Comparisons
+
 <p align="center">
-    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/sphericals.png"/>
+    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/spherical_result.png"/>
 </p> 
 
 ---
 
+#### More Results of ULSD
+
 <p align="center">
-    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/spherical_result.png"/>
+    <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/sphericals.png"/>
 </p> 
 
 ## Video
@@ -447,9 +464,9 @@ conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
 ```
 
 ## Quickstart with the pretrained model
-
-* There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in [Google drive](https://drive.google.com/drive/folders/1QyNjfLKoKqX8smi3e922Z8PEeBZid_St). Please download them and put in the **model/** folder.  
-* There are 3 testing images in **dataset/** folder. 
+[//]: There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in [Google drive](https://drive.google.com/drive/folders/1QyNjfLKoKqX8smi3e922Z8PEeBZid_St). Please download them and put in the **model/** folder.
+* There are 3 pretrained models (**pinhole.pkl**, **fisheye.pkl**, and **spherical.pkl**) in [Google drive]. Please download them and put in the **model/** folder.  
+* There are some testing images in **dataset/** folder. 
 
 ```
 python test.py --config_file pinhole.yaml --dataset_name pinhole --save_image
