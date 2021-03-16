@@ -36,7 +36,7 @@ def eval_APH(cfg):
             name = gt_file.split('/')[-1].split('.')[0]
             mat_name = name + '.mat'
             npz = np.load(gt_file)
-            lines = npz['line'].reshape(-1, 4)
+            lines = npz['line'][:, [0, -1]].reshape(-1, 4)
             os.makedirs(os.path.join(temp_path, 'gt'), exist_ok=True)
             sio.savemat(os.path.join(temp_path, 'gt', mat_name), {'lines': lines})
 
@@ -46,7 +46,7 @@ def eval_APH(cfg):
                 name = pred_file.split('/')[-1].split('.')[0]
                 mat_name = name + '.mat'
                 npz = np.load(pred_file)
-                lines = npz['line_pred'].reshape(-1, 4)
+                lines = npz['line_pred'][:, [0, -1]].reshape(-1, 4)
                 scores = npz['line_score']
                 idx = np.where(scores > t)[0]
                 os.makedirs(os.path.join(temp_path, str(t)), exist_ok=True)
