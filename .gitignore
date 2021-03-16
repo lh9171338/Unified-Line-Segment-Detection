@@ -1,5 +1,3 @@
-/dataset/*
-!dataset/*.py
 /model/
 /output/
 /.idea/
