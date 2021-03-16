@@ -38,6 +38,7 @@ def save_lines(image, lines, heatmap_size, filename, plot=False):
     plt.savefig(filename, dpi=height, bbox_inches=0)
     if plot:
         plt.show()
+
     plt.close()
 
 
@@ -70,7 +71,7 @@ def test(model, loader, cfg, device):
             if cfg.save_image:
                 image = cv2.imread(src_filename)
                 line_pred = line_pred[line_score > cfg.score_thresh]
-                save_lines(image, line_pred, cfg.heatmap_size, image_filename, plot=False)
+                save_lines(image, line_pred, cfg.heatmap_size, image_filename)
 
             index += 1
 

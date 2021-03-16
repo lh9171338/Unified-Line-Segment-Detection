@@ -17,6 +17,7 @@ def save_npz(prefix, image, lines, heatmap_size):
     lines[:, :, 0] = np.clip(lines[:, :, 0] * sx, 0, heatmap_size[0] - 1e-4)
     lines[:, :, 1] = np.clip(lines[:, :, 1] * sy, 0, heatmap_size[1] - 1e-4)
     juncs = np.concatenate((lines[:, 0], lines[:, -1]))
+    juncs = np.round(juncs, 3)
     juncs = np.unique(juncs, axis=0)
 
     np.savez_compressed(
@@ -40,7 +41,9 @@ def json2npz(src_path, dst_path, cfg, plot=False):
         lines = np.asarray(data['lines'])
         image = cv2.imread(os.path.join(src_path, 'image', filename))
 
-        if cfg.type == 'fisheye':
+        if cfg.type == 'pinhole':
+            lines = np.asarray(bez.interp_line(lines, num=7))
+        elif cfg.type == 'fisheye':
             coeff = {'K': np.asarray(data['K']), 'D': np.asarray(data['D'])}
             camera = cam.Fisheye(coeff)
             pts_list = camera.interp_line(lines, resolution=0.01)

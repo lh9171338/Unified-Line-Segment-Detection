@@ -15,8 +15,8 @@ figure_path: 'figure'
 log_path: 'log'
 model_path: 'model'
 model_name: 'pinhole.pkl'
-config_path: 'config'
-config_file: 'pinhole.yaml'
+config_path: ''
+config_file: ''
 
 # Train configurations
 num_workers: 4

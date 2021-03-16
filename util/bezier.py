@@ -14,6 +14,8 @@ def fit_line(pts_list, order):
     lines, t_list = [], []
     t0 = np.linspace(0, 1, order + 1)
     for pts in pts_list:
+        if len(pts) < 2:
+            continue
         dists = np.linalg.norm(pts[1:] - pts[:-1], axis=-1)
         dists = np.cumsum(dists)
         t = np.concatenate((np.zeros(1), dists / dists[-1]))

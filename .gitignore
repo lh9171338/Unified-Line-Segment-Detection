@@ -2,6 +2,5 @@
 !dataset/*.py
 /model/
 /output/
-/log/
 /.idea/
 */*/*.pyc

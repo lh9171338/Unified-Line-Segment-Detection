@@ -69,6 +69,7 @@ def save_npz(prefix, image, lines, centers, cfg):
     lmap = np.zeros((1,) + heatmap_size[::-1], dtype=np.float32)
 
     juncs = np.concatenate((lines[:, 0], lines[:, -1]))
+    juncs = np.round(juncs, 3)
     juncs = np.unique(juncs, axis=0)
     lpos = lines.copy()
     lneg = []
@@ -124,16 +125,8 @@ def json2npz(src_path, dst_path, split, cfg, plot=False):
         shutil.rmtree(os.path.join(dst_path, split))
     os.makedirs(os.path.join(dst_path, split), exist_ok=True)
 
-    if cfg.type == 'spherical':
-        tfs = [aug.Noop(), aug.HorizontalFlip(), aug.VerticalFlip(),
-                aug.Compose([aug.HorizontalFlip(), aug.VerticalFlip()]),
-               aug.HorizontalMove(degree=180.0),
-               aug.Compose([aug.HorizontalMove(degree=180.0), aug.HorizontalFlip()]),
-               aug.Compose([aug.HorizontalMove(degree=180.0), aug.VerticalFlip()]),
-               aug.Compose([aug.HorizontalMove(degree=180.0), aug.HorizontalFlip(), aug.VerticalFlip()])]
-    else:
-        tfs = [aug.Noop(), aug.HorizontalFlip(), aug.VerticalFlip(),
-               aug.Compose([aug.HorizontalFlip(), aug.VerticalFlip()])]
+    tfs = [aug.Noop(), aug.HorizontalFlip(), aug.VerticalFlip(),
+           aug.Compose([aug.HorizontalFlip(), aug.VerticalFlip()])]
 
     def call_back(data):
         filename = data['filename']
@@ -154,7 +147,7 @@ def json2npz(src_path, dst_path, split, cfg, plot=False):
                 image, lines = tfs[i](image0, lines0)
                 if cfg.type == 'spherical':
                     lines = camera.truncate_line(lines)
-                    lines = camera.remove_line(lines, thresh=10.0)
+                lines = camera.remove_line(lines, thresh=10.0)
                 pts_list = camera.interp_line(lines)
                 lines = bez.fit_line(pts_list, order=2)[0]
                 centers = lines[:, 1]
