@@ -201,15 +201,11 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 </table>
 </html>
 
----
-
 #### Qualitative Comparisons
 
 <p align="center">
     <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/pinhole_result.png"/>
 </p> 
-
----
 
 #### More Results of ULSD
 
@@ -328,15 +324,11 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 </table>
 </html>
 
----
-
 #### Qualitative Comparisons
 
 <p align="center">
     <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/fisheye_result.png"/>
 </p> 
-
----
 
 #### More Results of ULSD
 
@@ -419,15 +411,11 @@ This repository contains the official PyTorch implementation of the paper: [ULSD
 </table>
 </html>
 
----
-
 #### Qualitative Comparisons
 
 <p align="center">
     <img src="https://github.com/lh9171338/Unified-Line-Segment-Detection/blob/main/figure/spherical_result.png"/>
 </p> 
-
----
 
 #### More Results of ULSD
 
