@@ -33,7 +33,7 @@ save_temp: False
 # Test configurations
 save_image: False
 evaluate: False
-score_thresh: 0.9
+score_thresh: 0.8
 
 # Network configurations
 depth: 4

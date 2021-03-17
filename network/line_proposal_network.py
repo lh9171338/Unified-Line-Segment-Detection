@@ -56,6 +56,11 @@ class LineProposalNetwork(nn.Module):
 
         self.head = MultiTaskHead(input_channels=input_channels, output_channels_list=output_channels_list)
 
+        lambda_ = np.concatenate((np.linspace(1.0, 0.0, self.order + 1)[None],
+                             np.linspace(0.0, 1.0, self.order + 1)[None]))
+        lambda_ = torch.from_numpy(lambda_).float()
+        self.register_buffer('lambda_', lambda_)
+
     def forward(self, features, metas=None):
         """
         Forward Line Proposal Network
@@ -140,7 +145,9 @@ class LineProposalNetwork(nn.Module):
                     end_pred = torch.cat((junc_pred[idx_junc[:, 0], None], junc_pred[idx_junc[:, 1], None]), dim=1)
                     mask = end_pred[:, 0, 1] > end_pred[:, 1, 1]
                     end_pred[mask] = end_pred[mask][:, [1, 0]]
-                    loi_pred = torch.cat((end_pred[:, :1], loi_pred[unique_indices, 1:-1], end_pred[:, -1:]), dim=1)
+                    loi_pred = loi_pred[unique_indices]
+                    delta_end_pred = end_pred - loi_pred[:, [0, -1]]
+                    loi_pred += (self.lambda_[None, :, :, None] * delta_end_pred[:, :, None, :]).sum(1)
 
                 loi_preds.append(loi_pred)
 

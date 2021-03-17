@@ -2,7 +2,7 @@
 gpu: 0
 seed: 0
 type: 'spherical'
-order: 2  # [1, 2, 3, 4]
+order: 4  # [1, 2, 3, 4]
 
 # Path configurations
 dataset_name: 'sun360'  # ['wireframe', 'york', 'fwireframe', 'fyork', 'sun360']
@@ -33,7 +33,7 @@ save_temp: False
 # Test configurations
 save_image: False
 evaluate: False
-score_thresh: 0.9
+score_thresh: 0.8
 
 # Network configurations
 depth: 4
