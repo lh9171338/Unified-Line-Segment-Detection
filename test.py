@@ -101,7 +101,7 @@ if __name__ == '__main__':
     # Load model
     model = LCNN(cfg).to(device)
     model_filename = os.path.join(cfg.model_path, cfg.model_name)
-    model.load_state_dict(torch.load(model_filename, map_location=device))
+    model.load_state_dict(torch.load(model_filename, map_location=device, weights_only=True))
 
     # Load dataset
     dataset = Dataset(cfg.test_dataset_path, cfg, with_label=False)
